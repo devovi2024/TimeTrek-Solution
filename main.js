@@ -55,6 +55,24 @@ class TimeTrek {
         this.timeDisplay.textContent = '00:00:00'
     }
 
+        addCategory() {
+        const category= prompt('Enter category for this log');
+        if(category){
+            const elapsed = Math.floor((Date.now() - this.startTime) / 1000)
+            this.logList.innerHTML += `<li>Category: ${category} | ${this.formatTime(elapsed)}</li>`
+        }
+    }
+
+    showDailySummary() {
+        const logs = this.logList.getElementsByTagName('li');
+        let totalSecond = 0;
+        for(let log of logs){
+            const timeStr = log.textContent.split('|')[1];
+            const [hours , minutes, seconds] = timeStr.split(':').map(Number);
+            totalSecond += hours * 3600 + minutes  * 60 + seconds
+        }
+        alert(`Total time Today: ${this.formatTime(totalSecond)}`)
+    }
 
 }
 
