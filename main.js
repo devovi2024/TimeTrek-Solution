@@ -28,6 +28,15 @@ class TimeTrek {
     }
 
 
+        formatTime(second){
+        const hrs = Math.floor(second / 3600);
+        const mins = Math.floor((second % 3600) / 60);
+        const secs = second % 60;
+        return [hrs, mins, secs].map(unit => unit.toString().padStart(2, '0')).join(':')
+
+    }
+
+
 }
 
 // Initialize the TimeTrek class when the DOM is ready
