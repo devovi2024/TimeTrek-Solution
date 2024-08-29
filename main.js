@@ -36,6 +36,25 @@ class TimeTrek {
 
     }
 
+        startTimer() {
+        this.startTime = Date.now();
+        this.timerInterval = setInterval(() => {
+            const elapsed = Math.floor((Date.now() - this.startTime) / 1000);
+            this.timeDisplay.textContent = this.formatTime(elapsed);
+        }, 1000);
+        this.startBtn.disabled = true;
+        this.stopBtn.disabled = false;
+    }
+
+    stopTimer(){
+        clearInterval(this.timerInterval);
+        const elapsed = Math.floor((Date.now() - this.startTime) / 1000);
+        this.logList.innerHTML += `<li>${this.formatTime(elapsed)}</li>`;
+        this.startBtn.disabled = false;
+        this.stopBtn.disabled = true;
+        this.timeDisplay.textContent = '00:00:00'
+    }
+
 
 }
 
