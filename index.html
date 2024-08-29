@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeTrek</title>
+    <link rel="stylesheet" href="/src/style.css">
+
+    <!-- Author : Arfan ovi  -->
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img style="width: 100%; height: 70vh;" src="/src/images/logo.jpg" alt="TimeTrek Logo" class="logo">
+            <h1>TimeTrek</h1>
+        </header>
+        <div class="tracker">
+            <button id="startBtn">Start</button>
+            <button id="stopBtn" disabled>Stop</button>
+            <div id="timeDisplay">00:00:00</div>
+        </div>
+        <div class="features">
+            <h2>Additional Features</h2>
+            <button id="logCategoryBtn">Add Category</button>
+            <button id="dailySummaryBtn">Daily Summary</button>
+        </div>
+        <div id="logContainer">
+            <h2>Time Logs</h2>
+            <ul id="logList"></ul>
+        </div>
+    </div>
+    <script src="/src/main.js"></script>
+</body>
+</html>
